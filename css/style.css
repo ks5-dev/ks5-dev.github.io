@@ -1,0 +1,237 @@
+*{
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Arima Madurai';
+  max-width: 100%;
+  overflow-x: hidden;
+}  
+video {
+  width: 60%;
+  height: auto;
+}
+nav{
+    background: #FFF;
+    height: 80px;
+    width: 100%;
+  }
+
+  nav ul{
+    float: left;
+    
+  }
+  nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+  }
+  nav ul li a{
+    color: black;
+    font-size: 22px;
+    padding: 7px 13px;
+    border-radius: 3px;
+  }
+  a.active,a:hover{
+    text-decoration: underline;
+    text-decoration-color: #4B3621;
+    transition: .5s;
+  }
+  .checkbtn{
+    font-size: 30px;
+    color: black;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+  }
+  #check{
+    display: none;
+  }
+  @media (max-width: 952px){
+    nav ul li a{
+      font-size: 16px;
+    }
+  }
+  @media (max-width: 858px){
+    .checkbtn{
+      display: block;
+    }
+    ul{
+      position: fixed;
+      width: 100%;
+      height: 15vh;
+      background: #242526;
+      top: 10vh;
+      left: -100%;
+      text-align: center;
+      transition: all .5s;
+    }
+    nav ul li{
+      display: block;
+      margin: 50px 0;
+      line-height: 20px;
+    }
+    nav ul li a{
+      color:#FFF;
+      font-size: 20px;
+    }
+    a:hover,a.active{
+      text-decoration: underline;
+      background: none;
+      text-decoration-color: #4B3621;
+    }
+    #check:checked ~ ul{
+      left: 0;
+    }
+  }
+
+  .search {
+    width: 100%;
+    padding-top: 40px;
+    display: flex;
+  }
+  
+  .searchTerm {
+    width: 200px;
+    background-color: #E0D4D4;
+    border-right: none;
+    padding: 5px;
+    height: 36px;
+    border-radius: 10px 0 0 10px;
+    outline: none;
+    color: black;
+  }
+  
+  @media (max-width: 600px){
+    .searchTerm{
+      border-radius: 10px 10px 10px 10px;
+    }
+  }
+  
+  .searchTerm:focus{
+    color: #724846;
+  }
+  
+  .searchButton {
+    background: url(/img/sear.png) no-repeat, #B27E73;
+    width: 40px;
+    height: 36px;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+    font-size: 20px;
+    
+  }
+  
+  /*Resize the wrap to see the search bar change!*/
+
+.slider {
+  width: 700px;
+  height: 380px;
+}
+.wrapper {
+  overflow: hidden;
+  position: relative;
+  background: #222;
+  z-index: 0;
+  border-radius: 8px;
+}
+#items {
+  width: 10000px;
+  position: relative;
+  top: 0;
+}
+#items.shifting {
+  transition: left .2s ease-out;
+}
+.slide {
+  width: 700px;
+  height: 380px;
+  cursor: pointer;
+  float: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 1s;
+  position: relative;
+}
+.slider.loaded .slide:nth-child(3){
+  background-color: greenyellow;
+}
+
+.slider.loaded .slide:nth-child(2){
+  background-color: #724846;
+}
+
+.slider.loaded .slide:nth-child(1){
+  background-color: goldenrod;
+}
+
+.control {
+  position: absolute;
+  top: 70%;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border-radius: 20px;
+  margin-top: -20px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+.prev,
+.next {
+  background-size: 22px;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.prev {
+  background-image: url(/img/chevron-left.webp);
+  left: -20px;
+}
+.next {
+  background-image: url(/img/chevron-right.webp);
+  right: -20px;
+}
+.prev:active,
+.next:active {
+  transform: scale(0.8);
+}
+
+.horizontal {
+  overflow: hidden;
+  text-align: center;
+}
+
+.horizontal:before,
+.horizontal:after {
+  background-color: #E0D4D4;
+  content: "";
+  display: inline-block;
+  height: 1px;
+  position: relative;
+  vertical-align: middle;
+  width: 50%;
+}
+
+.horizontal:before {
+  right: 0.5em;
+  margin-left: -50%;
+}
+
+.horizontal:after {
+  left: 0.5em;
+  margin-right: -50%;
+}
+
+
+.vertical-line{
+  border-left: 2px solid white;
+  height: auto
+}

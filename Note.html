@@ -1,0 +1,61 @@
+
+.slider {
+  width: 700px;
+  height: 380px;
+}
+.wrapper {
+  overflow: hidden;
+  position: relative;
+  background: #222;
+  z-index: 1;
+}
+#items {
+  width: 10000px;
+  position: relative;
+  top: 0;
+}
+#items.shifting {
+  transition: left .2s ease-out;
+}
+.slide {
+  width: 700px;
+  height: 380px;
+  cursor: pointer;
+  float: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 1s;
+  position: relative;
+}
+
+.control {
+  position: absolute;
+  top: 50%;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border-radius: 20px;
+  margin-top: -20px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+.prev,
+.next {
+  background-size: 22px;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.prev {
+  background-image: url(/img/chevron-left.webp);
+  left: -20px;
+}
+.next {
+  background-image: url(/img/chevron-right.webp);
+  right: -20px;
+}
+.prev:active,
+.next:active {
+  transform: scale(0.8);
+}
